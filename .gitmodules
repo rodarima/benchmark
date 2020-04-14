@@ -1,0 +1,8 @@
+[submodule "apps/app1/pm1"]
+	path = apps/app1/pm1
+	url = /home/ram/bsc/garlic/A/app1.git
+	branch = pm1
+[submodule "apps/app1/pm2"]
+	path = apps/app1/pm2
+	url = /home/ram/bsc/garlic/A/app1.git
+	branch = pm2
