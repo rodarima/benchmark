@@ -11,3 +11,6 @@ To pull all submodules and point all branch to their remote branches do the
 following:
 
 	$ git submodule update --recursive --remote
+
+Note: GitHub doesn't link relative paths in the web view to the appropriate
+repository. The full path works fine.
