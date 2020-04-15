@@ -45,7 +45,40 @@ Then take a look at the results:
 	apps/app1/pm1 87
 	apps/app1/pm2 60
 
-### Update
+
+### New version of an app
+
+Now consider that you updated some app, and you want to include the new changes
+into the benchmark.
+
+The benchmark freezes the current tip of each branch at the moment of the
+commit. So any changes in the app branches are not reflected in the benchmark
+yet. This is interesting as we want for any benchmark release version to always
+work with the same version of the apps, regarding future improvements.
+
+In order to update all benchmark apps, run:
+
+	$ git submodule update --recursive --remote
+	Submodule path 'apps/app1/pm1': checked out 'daec729b2b495a860d5ef677eb7cfca11dabc19e'
+
+In this case the `apps/app1/pm1` was modified. You will see changes as if the
+submodule folders were modified files:
+
+	$ git status
+	On branch master
+	Your branch is up to date with 'origin/master'.
+
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+		modified:   apps/app1/pm1 (new commits)
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+Then use the `git add apps/app1/pm1` and `git commit` commands to create a new
+benchmark commit to include the new versions or your apps.
+
+### New programming model
 
 To add a new programming model (say pm3), first create a branch in the app repo
 (https://github.com/rodarima/app1.git) which performs the benchmark when `make
