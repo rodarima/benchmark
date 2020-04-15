@@ -1,7 +1,7 @@
 To clone this repo use the `--recursive` option, so all submodules are
 downloaded as well:
 
-	git clone --recursive https://github.com/rodarima/benchmark
+	$ git clone --recursive https://github.com/rodarima/benchmark
 
 To add a new programming model (say pm3), first create a branch in the app repo
 (app1.git) which performs the benchmark when `make bench.txt` is called. Then to
